@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Launch (GDB)", // 调试配置的名称，在调试下拉菜单中会看到
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe", // [!important] 必须与tasks.json中-o参数生成的路径一致
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false, // 设为false则使用集成终端，设为true则弹出外部cmd窗口
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\TDM-GCC-64\\bin\\gdb.exe", // [!must modify] 【必填】修改为你的gdb.exe实际路径
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file" // [!important] 必须与tasks.json中的label完全一致（包括大小写和空格）
+        }
+    ]
+}

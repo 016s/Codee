@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file", // [!note] 任务标签，launch.json会用到它
+            "command": "C:\\TDM-GCC-64\\bin\\g++.exe", // [!must modify] 【必填】修改为你的g++.exe实际路径，注意使用双反斜杠\\
+            "args": [
+                "-g",        // [!important] 生成调试信息，必须保留
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe" // [!important] 指定生成的exe文件名和位置
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "编译器: C:\\TDM-GCC-64\\bin\\g++.exe"
+        }
+    ]
+}
